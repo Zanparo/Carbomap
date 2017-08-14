@@ -3,11 +3,16 @@ package com.epitech.carbomap.model;
 import android.util.Log;
 
 /**
- * Created by samue on 18/04/2017.
+ * Created by Darracq Samuel on 18/04/2017.
+ * This class is only used to store and classify datas
+ * Basically getters and setters adapted to all kind of datas stored.
  */
-
 public class ScenarResult {
 
+    /**
+     * Check if undispensable datas are set
+     * @return true if they're set, false if not.
+     */
     public boolean isComplete() {
         if (_scenar == eScenario.UNSELECT || _area_distrib == eAreaDistrib.UNSELECT || _frequency == eFrequency.UNSELECT || _quick_access == eQuickAccess.UNSELECT || _need_data == eNeedData.UNSELECT || _past_data == ePastData.UNSELECT || _spatial == eSpatial.UNSELECT)
             return false;
@@ -262,6 +267,9 @@ public class ScenarResult {
         this._frequency_flexibility = eFlexibility.values()[flexibility];
     }
 
+    /**
+     * @return a string exposing all datas
+     */
     public String expose() {
         if (isComplete())
             return "Scenario:" + _scenar.toString() + " |budget_priority:" + _budget_priority + " |budget_flexibility:" + _budget_flexibility.toString() + " |budgetValue:" + _budget + " |budgetUnit:" + _budget_unit.toString() + " |areaDistrib:" + _area_distrib.toString() + " |areaAmount:" + _area_amount + " |areaUnit:" + _area_unit.toString() + " |totalAreas:" + _total_areas + " |totalAreasUnit:" + _total_areas_unit.toString() + " |areaPriority:" + _area_priority.toString() + " |areaFlexibility:" + _area_flexibility.toString() + " |spatial:" + _spatial.toString() + " |spatialPriority:" + _spatial_priority.toString() + " |spatialFlexibility:" + _spatial_flexibility.toString() + " |quickAccess:" + _quick_access + " |quickAccessPriority:" + _quick_access_priority + " |quickAccessFlexibility:" + _quick_access_flexibility + " |pastData:" + _past_data.toString() + " |pastDataPriority:" + _past_data_priority.toString() + " |pastDataFlexibility:" + _past_data_flexibility.toString() + "  |frequency:" + _frequency.toString() + "  |frequencyPriority:" + _frequency_priority + "  |frequencyFlexibility:" + _frequency_flexibility;
